@@ -1,0 +1,17 @@
+body {
+  margin-top: -22px;
+  content: "";
+  width: 100vw;
+  height: auto;
+  /* position: fixed; */
+  background-repeat: no-repeat;
+
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-position: center center;
+}
+
+label {
+  color: darkgray;
+  font-size: 20px;
+}

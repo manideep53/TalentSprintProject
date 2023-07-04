@@ -1,0 +1,36 @@
+body {
+  margin-top: -24px;
+  background-color: darkslategray;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+i {
+  color: floralwhite;
+  margin-top: 80px;
+  font-size: 150px;
+}
+h1 {
+  font-variant: small-caps;
+  font-size: 100px;
+  text-align: center;
+  color: floralwhite;
+  letter-spacing: 5px;
+  font-style: italic;
+  margin-top: -50px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.middle p {
+  font-variant: small-caps;
+  font-size: 25px;
+  color: darkgray;
+  text-align: center;
+  margin-top: -60px;
+  margin-bottom: 25px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.middle i {
+  margin-top: -30px;
+}

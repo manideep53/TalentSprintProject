@@ -1,0 +1,102 @@
+body {
+  background-color: darkslategray;
+  margin-top: -30px;
+  width: 100vw;
+  min-height: 350vh;
+}
+
+h1 {
+  font-style: italic;
+  font-weight: 900;
+  padding-top: 50px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-style: italic;
+  font-weight: 900;
+}
+.custom-image {
+  width: 150px;
+  height: 100px;
+}
+
+p {
+  color: darkgray;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.card {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  margin: 25px;
+  background-color: #fffaf0;
+}
+.card img {
+  margin-bottom: 15px;
+  transition: 0.3s ease-in-out;
+}
+
+.card img:hover {
+  transition: 0.3s ease-in-out;
+  transform: scale(0.9);
+}
+
+.card h5 {
+  font-style: italic;
+  font-weight: 400;
+}
+
+#faqs h2 {
+  font-size: 34px;
+  font-weight: 900;
+  text-align: center;
+  padding: 20px 0 50px 0;
+  margin-bottom: -50px;
+  color: floralwhite;
+}
+
+.accordion .card {
+  border-radius: 0;
+  background: none;
+  border-left-width: 0;
+  border-right-width: 0;
+  background-color: #fffaf0;
+}
+
+.accordion .card .card-header {
+  background: none;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border-radius: 0;
+}
+
+.accordion .card-header h3 {
+  font-size: 1rem;
+}
+
+.accordion .card-header .btn {
+  color: rgb(14, 1, 99);
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  text-align: left;
+}
+
+.accordion .card-header i {
+  position: absolute;
+  font-size: 1.3rem;
+  top: 15px;
+  right: 0.5rem;
+}
+
+.accordion .card-body {
+  color: black;
+}
+
+.accordion .card .card-header a {
+  text-decoration: none;
+}

@@ -1,0 +1,183 @@
+<body>
+  <div class="container">
+    <table class="table table-bordered">
+      <thead class="thead-light">
+        <tr>
+          <th class="col-1">CustomerId</th>
+
+          <th class="col">CustomerName</th>
+          <th class="col">Gender</th>
+          <th class="col">PhoneNumber</th>
+          <th class="col">Address</th>
+          <th class="col">Email-Id</th>
+          <th class="col">Password</th>
+
+          <th class="col" colspan="2">Action</th>
+        </tr>
+      </thead>
+      <tbody class="tbody">
+        <tr *ngFor="let customer of customers">
+          <td>{{ customer.id }}</td>
+          <td>{{ customer.name | gender : customer.gender }}</td>
+
+          <td>{{ customer.gender }}</td>
+
+          <td>{{ customer.phoneNumber }}</td>
+
+          <td>{{ customer.address }}</td>
+
+          <td>{{ customer.emailId }}</td>
+
+          <td>{{ customer.password }}</td>
+
+          <td>
+            <button class="btn btn-danger" (click)="deleteCustomer(customer)">
+              <i class="fa-solid fa-trash-can fa-fade"></i>
+            </button>
+          </td>
+          <td>
+            <button
+              class="btn btn-success"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
+              (click)="edit(customer)"
+            >
+              <i class="fa-solid fa-pencil fa-fade"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div
+    class="modal fade"
+    id="staticBackdrop"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
+    tabindex="-1"
+    aria-labelledby="staticBackdropLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">
+            Customer Update Form
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+
+        <div class="modal-body">
+          <form #updateForm="ngForm" (ngSubmit)="updateCustomer()">
+            <div class="form-group col-12">
+              <label class="text-dark">CustomerId:</label>
+              <input
+                class="form-control"
+                type="text"
+                disabled
+                #id
+                [(ngModel)]="customerToUpdate.id"
+                name="id"
+                id="id"
+                required
+              />
+
+              <div class="form-group col-12">
+                <label class="text-dark">CustomerName:</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  #name
+                  [(ngModel)]="customerToUpdate.name"
+                  name="name"
+                  id="name"
+                  required
+                />
+              </div>
+
+              <div class="form-group col-12">
+                <label class="text-dark">Gender:</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  #gender
+                  [(ngModel)]="customerToUpdate.gender"
+                  name="gender"
+                  id="gender"
+                  required
+                />
+              </div>
+
+              <div class="form-group col-12">
+                <label class="text-dark">CustomerPhoneNumber:</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  #phoneNumber
+                  [(ngModel)]="customerToUpdate.phoneNumber"
+                  name="phoneNumber"
+                  id="phoneNumber"
+                  required
+                />
+              </div>
+
+              <div class="form-group col-12">
+                <label class="text-dark">Address:</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  #address
+                  [(ngModel)]="customerToUpdate.address"
+                  name="address"
+                  id="address"
+                  required
+                />
+              </div>
+
+              <div class="form-group col-12">
+                <label class="text-dark">Email-Id:</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  #emailId
+                  [(ngModel)]="customerToUpdate.emailId"
+                  name="emailId"
+                  id="emailId"
+                  required
+                />
+              </div>
+
+              <div class="form-group col-12">
+                <label class="text-dark">Password:</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  #password
+                  [(ngModel)]="customerToUpdate.password"
+                  name="password"
+                  id="password"
+                  required
+                />
+                <small class="text-muted text-dark">
+                  Must be 3-16 characters long.
+                </small>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-danger" data-bs-dismiss="modal">
+                Close
+              </button>
+              <button class="btn btn-success">Update</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

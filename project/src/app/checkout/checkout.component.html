@@ -1,0 +1,93 @@
+<body style="background-image: url('assets/Images/payment1.jpg')">
+  <!--  -->
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <div class="card w-75">
+          <div class="card-header">
+            <h2 class="font-italic font-weight-bold">
+              <i>Billing Details</i>
+            </h2>
+          </div>
+          <div class="card-body bg-dark">
+            <form #billForm="ngForm">
+              <div class="form-group col-12">
+                <label class="text-white font-weight-bold"
+                  >Name: <i class="fa-solid fa-user"></i
+                ></label>
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Enter Name..."
+                  name="name"
+                  [(ngModel)]="name"
+                  required
+                />
+              </div>
+
+              <div class="form-group col-12">
+                <label class="text-white font-weight-bold"
+                  >ContactNumber:
+                  <i class="fa-sharp fa-solid fa-phone-volume"></i
+                ></label>
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Enter ContactNumber..."
+                  name="phoneNumber"
+                  [(ngModel)]="phoneNumber"
+                  required
+                />
+              </div>
+
+              <div class="form-group col-12">
+                <label class="text-white font-weight-bold"
+                  >Address: <i class="fa-sharp fa-solid fa-address-card"></i
+                ></label>
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Enter Address..."
+                  name="address"
+                  [(ngModel)]="address"
+                  required
+                />
+              </div>
+
+              <div class="form-group col-12">
+                <label class="text-white font-weight-bold"
+                  >Email-Id: <i class="fa-sharp fa-solid fa-envelope"></i
+                ></label>
+                <input
+                  class="form-control"
+                  type="email"
+                  placeholder="Enter Email-Id..."
+                  name="emailId"
+                  [(ngModel)]="emailId"
+                  required
+                />
+              </div>
+
+              <div class="col-md-9 float-right my-3">
+                <button
+                  (click)="initializePayment()"
+                  class="btn btn-danger btn-lg font-weight-bold"
+                >
+                  Click to Pay : {{ grandTotal | currency : "INR" }}
+                </button>
+              </div>
+              <div class="col-md-9 float-right">
+                <button
+                  (click)="clearInput()"
+                  class="btn btn-light font-weight-bold float-right"
+                >
+                  Generate Bill
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,15 @@
+body {
+  margin-top: -24px;
+  background-color: darkslategray;
+  width: 100vw;
+  min-height: 100vh;
+}
+h1 {
+  align-content: center;
+  color: floralwhite;
+  padding: 20px;
+}
+p {
+  color: darkgray;
+  font-variant: small-caps;
+}

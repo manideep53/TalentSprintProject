@@ -1,0 +1,16 @@
+h5 {
+  color: floralwhite;
+  font-variant: small-caps;
+  letter-spacing: 2px;
+}
+
+p {
+  color: darkgray;
+  font-variant: small-caps;
+}
+
+a {
+  color: darkgray;
+  text-decoration: none;
+  font-variant: small-caps;
+}

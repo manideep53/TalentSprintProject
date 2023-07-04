@@ -1,0 +1,53 @@
+<body>
+  <div
+    class="d-flex justify-content-center"
+    style="
+      font-size: 50px;
+      font-weight: bold;
+      color: floralwhite;
+      font-variant: small-caps;
+    "
+  >
+    <strong>{{ title }}</strong>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div *ngFor="let item of productList" class="col-md-6">
+        <div
+          class="card design"
+          style="width: 30rem"
+          *ngIf="item.productCategory === 'washingService'"
+        >
+          <img
+            [src]="item.productImagePath"
+            class="card-img-top"
+            alt="..."
+            style="height: 15rem"
+          />
+          <div class="card-body">
+            <h3 class="card-title">
+              <b>{{ item.productName }}</b>
+            </h3>
+            <p class="card-text text-danger">
+              <b>Price:</b> {{ item.productPrice | currency : "INR" }}
+            </p>
+            <p class="card-text">
+              <app-show-more
+                [text]="item.productDescription"
+                [wordLimit]="150"
+              ></app-show-more>
+            </p>
+            <button
+              class="btn btn-dark btn float-right"
+              style="font-variant: small-caps"
+              *ngIf="onLoggedIn() || notLoggedIn()"
+              (click)="addToCart(item)"
+            >
+              Book Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

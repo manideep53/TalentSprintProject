@@ -1,0 +1,23 @@
+body {
+  margin-top: -24px;
+  background-color: darkslategray;
+}
+
+p {
+  color: darkslateblue;
+}
+.card {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  margin: 25px;
+  background-color: #fffaf0;
+}
+.card img {
+  margin-bottom: 15px;
+  transition: 0.3s ease-in-out;
+}
+
+.card img:hover {
+  transition: 0.3s ease-in-out;
+  transform: scale(0.9);
+}

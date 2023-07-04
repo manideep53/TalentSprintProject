@@ -1,0 +1,129 @@
+<body>
+  <div
+    class="d-flex justify-content-center"
+    style="
+      font-size: 50px;
+      font-weight: bold;
+      color: floralwhite;
+      font-variant: small-caps;
+      letter-spacing: 4px;
+    "
+  >
+    <strong>{{ title }}</strong>
+  </div>
+
+  <hr class="my-3 text-white" />
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div
+          class="d-flex justify-content-start my-3"
+          style="
+            font-size: 35px;
+            font-weight: bold;
+            font-style: italic;
+            color: floralwhite;
+            font-variant: small-caps;
+          "
+        >
+          {{ fourWheel }}
+        </div>
+      </div>
+
+      <div class="col-md-3" *ngFor="let item of productList">
+        <div
+          class="card"
+          style="width: 21rem"
+          *ngIf="item.productCategory === 'fourWheel'"
+        >
+          <img
+            [src]="item.productImagePath"
+            class="card-img-top"
+            alt="..."
+            style="height: 15rem"
+          />
+          <div class="card-body">
+            <h3 class="card-title" style="font-variant: small-caps">
+              <b>{{ item.productName }}</b>
+            </h3>
+            <p class="card-text text-danger">
+              <b>Price:</b> {{ item.productPrice | currency : "INR" }}
+            </p>
+            <p class="card-text">
+              <app-show-more
+                [text]="item.productDescription"
+                [wordLimit]="69"
+              ></app-show-more>
+            </p>
+            <button
+              class="btn btn-dark float-right"
+              style="font-variant: small-caps"
+              (click)="addToCart(item)"
+              *ngIf="onLoggedIn() || notLoggedIn()"
+            >
+              Book Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="my-5 text-white" />
+
+  <div class="container-fluid">
+    <div class="col-md-12">
+      <div
+        class="d-flex justify-content-start my-3"
+        style="
+          font-size: 35px;
+          font-weight: 600;
+          font-style: italic;
+          color: floralwhite;
+          font-variant: small-caps;
+        "
+      >
+        {{ twoWheel }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3" *ngFor="let item of productList">
+        <div
+          class="card"
+          style="width: 21rem"
+          *ngIf="item.productCategory === 'twoWheel'"
+        >
+          <img
+            [src]="item.productImagePath"
+            class="card-img-top"
+            alt="..."
+            style="height: 15rem"
+          />
+          <div class="card-body">
+            <h3 class="card-title" style="font-variant: small-caps">
+              <b>{{ item.productName }}</b>
+            </h3>
+            <p class="card-text text-danger">
+              <b>Price:</b> {{ item.productPrice | currency : "INR" }}
+            </p>
+            <p class="card-text">
+              <app-show-more
+                [text]="item.productDescription"
+                [wordLimit]="69"
+              ></app-show-more>
+            </p>
+            <button
+              class="btn btn-dark float-right"
+              (click)="addToCart(item)"
+              *ngIf="onLoggedIn() || notLoggedIn()"
+            >
+              Book Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="my-3 text-white" />
+  </div>
+</body>

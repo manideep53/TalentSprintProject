@@ -1,0 +1,60 @@
+<body>
+  <div class="container">
+    <div class="row">
+      <div
+        class="col-md-12"
+        style="
+          font-size: 69px;
+          font-weight: bold;
+          color: floralwhite;
+          text-align: center;
+          font-variant: small-caps;
+        "
+      >
+        <strong style="letter-spacing: 4px">{{ title }}</strong>
+        <p style="text-align: center; font-size: 14px; color: darkgray">
+          We offer a full range of garage services to vehicle owners located in
+          Hyderabad area.
+          <br />
+          Our professinals know how to handle a wide range of Vehicle services.
+        </p>
+      </div>
+      <div *ngFor="let item of productList" class="col-md-6">
+        <div
+          class="card design"
+          style="width: 30rem"
+          *ngIf="item.productCategory === 'autoRepairService'"
+        >
+          <img
+            [src]="item.productImagePath"
+            class="card-img-top"
+            alt="..."
+            style="height: 15rem"
+          />
+          <div class="card-body">
+            <h3 class="card-title" style="font-variant: small-caps">
+              <b>{{ item.productName }}</b>
+            </h3>
+            <p class="card-text text-danger">
+              <b>Price:</b> {{ item.productPrice | currency : "INR" }}
+            </p>
+            <p class="card-text">
+              <app-show-more
+                [text]="item.productDescription"
+                [wordLimit]="150"
+              ></app-show-more>
+            </p>
+            <button
+              class="btn btn-dark btn float-right"
+              style="font-variant: small-caps"
+              (click)="addToCart(item)"
+              *ngIf="onLoggedIn() || notLoggedIn()"
+            >
+              Book Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
